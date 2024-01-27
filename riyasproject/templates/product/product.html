@@ -1,0 +1,286 @@
+{% extends "nav.html" %}
+{% load static %}
+{% block title %}
+aispacex login
+{% endblock title %}
+
+{% block style %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    .main-wrapper {
+        margin-top: 5rem;
+        min-height: 100vh;
+        background-color: #f1f1f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 1200px;
+        padding: 0 1rem;
+        margin: 0 auto;
+    }
+
+    .product-div {
+        margin: 1rem 0;
+        padding: 2rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: #fff;
+        border-radius: 3px;
+        column-gap: 10px;
+    }
+
+    .product-div-left {
+        padding: 20px;
+    }
+
+    .product-div-right {
+        padding: 20px;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    .img-container img {
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .hover-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 32px;
+    }
+
+    .hover-container div {
+        border: 2px solid rgba(252, 160, 175, 0.7);
+        padding: 1rem;
+        border-radius: 3px;
+        margin: 0 4px 8px 4px;
+        display: flex;
+        {% comment %} align-items: center; {% endcomment %}
+        justify-content: center;
+    }
+
+    .active {
+        border-color: rgb(255, 145, 163) !important;
+    }
+
+    .hover-container div:hover {
+        border-color: rgb(255, 145, 163);
+    }
+
+    .hover-container div img {
+        width: 50px;
+        cursor: pointer;
+    }
+
+    .product-div-right span {
+        display: block;
+    }
+
+    .product-name {
+        font-size: 26px;
+        margin-bottom: 22px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        opacity: 0.9;
+    }
+
+    .product-price {
+        font-weight: 700;
+        font-size: 24px;
+        opacity: 0.9;
+        font-weight: 500;
+    }
+
+    .product-rating {
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
+    }
+
+    .product-rating span {
+        margin-right: 6px;
+    }
+
+    .product-description {
+        font-weight: 18px;
+        line-height: 1.6;
+        font-weight: 300;
+        opacity: 0.9;
+        margin-top: 22px;
+    }
+
+    .btn-groups {
+        margin-top: 22px;
+    }
+
+    .btn-groups button {
+        display: inline-block;
+        font-size: 16px;
+        font-family: inherit;
+        text-transform: uppercase;
+        padding: 15px 16px;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-groups button .fas {
+        margin-right: 8px;
+    }
+
+    .add-cart-btn {
+        background-color: #FF9F00;
+        border: 2px solid #FF9F00;
+        margin-right: 8px;
+    }
+
+    .add-cart-btn:hover {
+        background-color: #fff;
+        color: #FF9F00;
+    }
+
+    .buy-now-btn {
+        background-color: #000;
+        border: 2px solid #000;
+    }
+
+    .buy-now-btn:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+    @media screen and (max-width: 992px) {
+        .product-div {
+            grid-template-columns: 100%;
+        }
+
+        .product-div-right {
+            text-align: center;
+        }
+
+        .product-rating {
+            justify-content: center;
+        }
+
+        .product-description {
+            max-width: 400px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .btn-groups button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+{% endblock style %}
+{% block body %}
+    <div class="main-wrapper">
+        <div class="container">
+                <div class="product-div">
+                    <div class="product-div-left">
+                        <div class="img-container">
+                            <img src="/media/{{product.image1}}" alt="watch">
+                        </div>
+                        <div class="hover-container">
+                            <div><img src="/media/{{product.image1}}"></div>
+                            <div><img src="/media/{{product.image2}}"></div>
+                            <div><img src="/media/{{product.image3}}"></div>
+                            <div><img src="/media/{{product.image4}}"></div>
+                            <div><img src="/media/{{product.image5}}"></div>
+                        </div>
+                    </div>
+                    <div class="product-div-right">
+                        <span class="product-name">{{product.sub_category}}</span>
+                        <span class="product-price">&#8360 {{product.price}}</span>
+                        <div class="product-rating">
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star-half-alt"></i></span>
+                            <span>(350 ratings)</span>
+                        </div>
+                        <p class="product-description">
+                            <i class="bi bi-dot"></i>{{product.des1}}
+                        </p>
+                        <p class="product-description">
+                            <i class="bi bi-dot"></i> {{product.des2}}
+                        </p>
+                        <p class="product-description">
+                            <i class="bi bi-dot"></i> {{product.des3}}
+                        </p>
+                        <p class="product-description">
+                            <i class="bi bi-dot"></i> {{product.des4}}
+                        </p>
+                        <p class="product-description">
+                            <i class="bi bi-dot"></i> {{product.des5}}
+                        </p>
+                        <div class="btn-groups">
+                            <form action="/addtocart" class="d-inline">
+                                <input type="hidden" name="prod_id" value={{product.id}}>
+                                <button type="submit" class="add-cart-btn"><i class="fas fa-shopping-cart"></i>add to cart</button>
+                            </form>
+                            {% comment %} <form action="/addtocart" class="d-inline" action="GET">
+                                <input type="hidden" name="prod_id" value={{product.id}}/>
+                                <a href="" class="add-cart-btn"><i class="fas fa-shopping-cart"></i>add to cart</a>
+                            </form> {% endcomment %}
+                            <button type="button" class="buy-now-btn"><i class="fas fa-wallet"></i>buy now</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        {% comment %} const allHoverImages = document.querySelectorAll('.hover-container div img');
+        const imgContainer = document.querySelector('.img-container');
+    
+        window.addEventListener('DOMContentLoaded', () => {
+            allHoverImages[0].parentElement.classList.add('active');
+        }); {% endcomment %}
+        const allHoverImages = document.querySelectorAll('.hover-container div img');
+        const imgContainer = document.querySelector('.img-container');
+        document.addEventListener('DOMContentLoaded', function() {
+            if (allHoverImages.length > 0) {
+                allHoverImages[0].parentElement.classList.add('active');
+            }
+        });
+    
+        allHoverImages.forEach((image) => {
+            image.addEventListener('mouseover', () =>{
+                imgContainer.querySelector('img').src = image.src;
+                resetActiveImg();
+                image.parentElement.classList.add('active');
+            });
+        });
+    
+        function resetActiveImg(){
+            allHoverImages.forEach((img) => {
+                img.parentElement.classList.remove('active');
+            });
+        }
+    </script>
+{% endblock body %}

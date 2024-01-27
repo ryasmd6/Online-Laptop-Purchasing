@@ -1,0 +1,155 @@
+<div class="card max-w-sm">
+      <img class="w-full h-full object-cover" src="../images/headphone.jpg" alt="Headphone" />
+      <div class="p-5 flex flex-col gap-3">
+        
+        
+        <!-- badge -->
+        <div class="flex items-center gap-2">
+          <span class="badge">Stock ready</span>
+          <span class="badge">Stock ready</span>
+        </div>
+
+        <!-- product title -->
+        <h2 class="product-title" title="Best Headphone Ever">
+          Best Headphone Ever
+        </h2>
+
+        <!-- product price -->
+        <div>
+          <span class="text-xl font-bold">Rs.4,00,000</span>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="text-sm line-through opacity-50">
+              Rs.5,00,000
+            </span>
+            <span class="discount-percent">
+              save 20%
+            </span>
+          </div>
+        </div>
+
+        <!-- product rating -->
+        <span class="flex items-center mt-1">
+          <img src="../images/star.svg" alt="" />
+          <img src="../images/star.svg" alt="" />
+          <img src="../images/star.svg" alt="" />
+          <img src="../images/star-half-fill.svg" alt="" />
+          <img src="../images/star-no-fill.svg" alt="" />
+          <span class="text-xs ml-2 text-gray500">20K reviews</span>
+        </span>
+
+        <!-- product action button -->
+        <div class="mt-5 flex gap-2">
+          <button class="button-primary">Add to Cart</button>
+          <button class="button-icon">
+            <img src="../images/love.svg" alt="" class="opacity-50" />
+          </button>
+          <button class="button-icon">
+            <img src="../images/eye.svg" alt="" class="opacity-50" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="w-full h-full object-cover" src="../images/headphone.jpg" alt="Headphone" />
+      <div class="p-5 flex flex-col gap-3">
+        
+        
+        <!-- badge -->
+        <div class="flex items-center gap-2">
+          <span class="badge">Stock ready</span>
+          <span class="badge">Stock ready</span>
+        </div>
+
+        <!-- product title -->
+        <h2 class="product-title" title="Best Headphone Ever">
+          Best Headphone Ever
+        </h2>
+
+        <!-- product price -->
+        <div>
+          <span class="text-xl font-bold">Rs.4,00,000</span>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="text-sm line-through opacity-50">
+              Rs.5,00,000
+            </span>
+            <span class="discount-percent">
+              save 20%
+            </span>
+          </div>
+        </div>
+
+        <!-- product rating -->
+        <span class="flex items-center mt-1">
+          <img src="../images/star.svg" alt="" />
+          <img src="../images/star.svg" alt="" />
+          <img src="../images/star.svg" alt="" />
+          <img src="../images/star-half-fill.svg" alt="" />
+          <img src="../images/star-no-fill.svg" alt="" />
+          <span class="text-xs ml-2 text-gray500">20K reviews</span>
+        </span>
+
+        <!-- product action button -->
+        <div class="mt-5 flex gap-2">
+          <button class="button-primary">Add to Cart</button>
+          <button class="button-icon">
+            <img src="../images/love.svg" alt="" class="opacity-50" />
+          </button>
+          <button class="button-icon">
+            <img src="../images/eye.svg" alt="" class="opacity-50" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="w-full h-full object-cover" src="../images/headphone.jpg" alt="Headphone" />
+      <div class="p-5 flex flex-col gap-3">
+        
+        
+        <!-- badge -->
+        <div class="flex items-center gap-2">
+          <span class="badge">Stock ready</span>
+          <span class="badge">Stock ready</span>
+        </div>
+
+        <!-- product title -->
+        <h2 class="product-title" title="Best Headphone Ever">
+          Best Headphone Ever
+        </h2>
+
+        <!-- product price -->
+        <div>
+          <span class="text-xl font-bold">Rs.4,00,000</span>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="text-sm line-through opacity-50">
+              Rs.5,00,000
+            </span>
+            <span class="discount-percent">
+              save 20%
+            </span>
+          </div>
+        </div>
+
+        <!-- product rating -->
+        <span class="flex items-center mt-1">
+          <img src="../images/star.svg" alt="" />
+          <img src="../images/star.svg" alt="" />
+          <img src="../images/star.svg" alt="" />
+          <img src="../images/star-half-fill.svg" alt="" />
+          <img src="../images/star-no-fill.svg" alt="" />
+          <span class="text-xs ml-2 text-gray500">20K reviews</span>
+        </span>
+
+        <!-- product action button -->
+        <div class="mt-5 flex gap-2">
+          <button class="button-primary">Add to Cart</button>
+          <button class="button-icon">
+            <img src="../images/love.svg" alt="" class="opacity-50" />
+          </button>
+          <button class="button-icon">
+            <img src="../images/eye.svg" alt="" class="opacity-50" />
+          </button>
+        </div>
+      </div>
+    </div>
