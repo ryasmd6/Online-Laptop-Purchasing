@@ -131,22 +131,25 @@ class checkout(View):
             )
             payment.save()
         pay = Payment.objects.get(razorpay_order_id = order_id)
+        add1 = Customer.objects.get(user = user)
         return render(request, 'payment/checkout.html', locals())
 
 def paymentdone(request):
     order_id = request.GET.get('order_id')
-    payment_id = request.GET.get('payment_id')
-    # cust_id = request.GET.get('custid')
+    # payment_id = request.GET.get('payment_id')
+    razorpay_payment_id = request.POST.get("razorpay_payment_id")
+    cust_id = request.GET.get('custid')
     user = request.user
     # print(cust_id)
     payment = Payment.objects.get(razorpay_order_id = order_id)
-    customer = Customer.objects.get(id=14)
+    # customer = Customer.objects.get(id=14)
+    customer = Customer.objects.get(id=cust_id)
     payment.paid = True
-    payment.razorpay_payment_id = payment_id
+    # payment.razorpay_payment_id = razorpay_payment_id
     payment.save()
     cart = Cart.objects.filter(user=user)
     for c in cart:
-        OrderPlaced(user=user,customer=customer, product=c.product, quantity=c.quantity, payment = payment).save()
+        OrderPlaced(user=user,customer=customer, product=c.product, quantity=c.quantity).save()
         c.delete()
     return redirect('orders')
 

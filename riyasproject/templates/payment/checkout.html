@@ -43,7 +43,7 @@ aispacex login
                             </div>
                         </div>
                         <div class="form-check mt-2 mb-5">
-                            <input type="radio" class="form-check-input" name="custid" id="custadd{{forloop.counter}}" value={{ad.name}}>   
+                            <input type="radio" class="form-check-input" name="custid" id="custadd{{forloop.counter}}" value={{ad.id}}>   
                             <label for="custadd{{forloop.counter}}" class="form-check-label fw-bold">Address: {{forloop.counter}}</label>
                         </div>
                     {% endfor %}
@@ -76,7 +76,7 @@ aispacex login
             console.log("Success");
             var form = document.getElementById("myform");
             var cust = form.elements["custid"].value;
-            window.location.href = 'http://localhost:8000/paymentdone?order_id={{pay.razorpay_order_id}}&payment_id={response.razorpay_payment_id}&custid={response.cust}';
+            window.location.href = "http://localhost:8000/paymentdone?order_id={{pay.razorpay_order_id}}&custid={{add1.id}}";
             //window.location.href = 'http://localhost:8000/paymentdone?order_id=${response.razorpay_order_id}&payment_id=${response.razorpay_payment_id}'
         },
         "theme": {
