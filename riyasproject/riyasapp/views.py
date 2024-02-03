@@ -23,13 +23,19 @@ def home(request):
         nSlides = n//4 + ceil((n/4)-(n//4))
         allProds.append([prod, range(1,nSlides),nSlides])
     params = {'allProds':allProds}
-    return render(request, 'index.html', params)
+    totalitem = 0
+    if current_user.is_authenticated:
+        totalitem = len(Cart.objects.filter(user=current_user))
+    return render(request, 'index.html', locals())
 
 
 def product(request, pname): # pname == model(sub_category)
+    totalitem = 0
+    if request.user.is_authenticated:
+        totalitem = len(Cart.objects.filter(user=request.user))
     if(Product.objects.filter(id=pname)):
         product=Product.objects.filter(id=pname).first()
-        return render(request, 'product/product.html', {'product':product})
+        return render(request, 'product/product.html',locals())
     else:
         messages.warning(request,"No such Catagory found")
         return redirect('/')
@@ -88,7 +94,7 @@ def addtocart(request):
     product_id = request.GET.get('prod_id')
     product = Product.objects.get(id=product_id)
     Cart(user = user, product = product).save()
-    return redirect('/cart')
+    return redirect('/cart', locals())
 
 def cart(request):
     user = request.user
@@ -154,4 +160,5 @@ def paymentdone(request):
     return redirect('orders')
 
 def orders(request):
-    return redirect('/')
+   order_placed = OrderPlaced.objects.filter(user=request.user)
+   return render(request, 'profile/order.html', locals())

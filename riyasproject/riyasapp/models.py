@@ -55,7 +55,7 @@ class Cart(models.Model):
 
     @property
     def total_cost(self):
-        return self.qunatity * self.product.price
+        return self.quantity * self.product.price
 
 class Payment(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)

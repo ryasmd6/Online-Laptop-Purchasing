@@ -68,11 +68,11 @@
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="{% url "cart" %}">Cart</a></li>
+          <li><a class="nav-link scrollto" href="{% url "cart" %}"><span class="badge bg-danger">{% if totalitem > 0 %} {{totalitem}} {% endif %}</span>Cart</a></li>
           <li class="dropdown"><a href="#" class="getstarted scrollto"><span>Welcome({{user.email}})</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{% url "profile" %}">Profile</a></li>
-              <li><a href="#">Order</a></li>
+              <li><a href="{% url "orders" %}">Order</a></li>
               <li><a href="/riyasauth/request-reset-email/">Change Password</a></li>
               <li><a href="/riyasauth/logout/">Logout</a></li>
             </ul>

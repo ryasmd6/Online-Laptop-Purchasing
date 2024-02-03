@@ -25,9 +25,8 @@ aispacex login
                                 <p class="mb-2 text-muted"><small>{{item.product.des1}}</small></p>
                                 <div class="my-3">
                                     <label for="quantity">Quantity: {{item.quantity}}</label>
-                                    <a href="" class="minus-cart btn" pid={{item.product.id}}>
-                                        <i class="fas fa-minus-square fa-lg"></i></a>
-                                    <a href="" class="plus-cart btn" pid={{item.product.id}}><i class="fas fa-plus-square fa-lg"></i></a>
+                                    {% comment %} <a href="" class="minus-cart btn" pid={{item.product.id}}><i class="fas fa-minus-square fa-lg"></i></a>
+                                    <a href="" class="plus-cart btn" pid={{item.product.id}}><i class="fas fa-plus-square fa-lg"></i></a> {% endcomment %}
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <a href={% url "removecart" pk=item.id %} class="remove-cart btn btn-sm btn-secondary mr-3"

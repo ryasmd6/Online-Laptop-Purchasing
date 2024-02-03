@@ -58,13 +58,13 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto " href="#processor">Processor</a></li>
           <li><a class="nav-link scrollto" href="#product">Product</a></li>
-          <li><a class="nav-link scrollto" href="{% url "cart" %}">Cart</a></li>
+          <li><a class="nav-link scrollto" href="{% url "cart" %}"><span class="badge bg-danger">{% if totalitem > 0 %} {{totalitem}} {% endif %}</span>Cart</a></li>
           <li class="dropdown"><a href="#" class="getstarted scrollto"><span>Welcome({{user.email}})</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{% url "profile" %}">Profile</a></li>
-              <li><a href="#">Order</a></li>
+              <li><a href="{% url "orders" %}">Order</a></li>
               <li><a href="/riyasauth/request-reset-email/">Change Password</a></li>
               <li><a href="/riyasauth/logout/">Logout</a></li>
             </ul>
@@ -188,10 +188,10 @@
               
                           <span class="float-start"><a target="_blank" href="/media/{{i.image1}}"><i class="bi bi-eye"></i></a></span>
               
-                          <span class="float-end">
+                          {% comment %} <span class="float-end">
                             <i class="far fa-heart" style="cursor: pointer"></i>
               
-                          </span>
+                          </span> {% endcomment %}
                         </div>
                       </div>
                     </div>
@@ -293,39 +293,39 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fug</p>
+          <p>Our Services</p>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <div class="icon"><i class="bi bi-truck"></i></div>
+              <h4 class="title"><a href="">Doorstep Delivery</a></h4>
+              <p class="description">Our eCommerce delivery service ensures fast and reliable shipping, bringing your purchases to your doorstep with speed and precision. Experience hassle-free shopping with our efficient and secure delivery options</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <div class="icon"><i class="bi bi-wallet2"></i></div>
+              <h4 class="title"><a href="">Cash on Delivery</a></h4>
+              <p class="description">Opt for our Cash on Delivery service for a hassle-free shopping experience. Pay in cash upon delivery, providing you the convenience of inspecting your order before making the payment.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <div class="icon"><i class="bi bi-collection"></i></div>
+              <h4 class="title"><a href="">Fresh Innovations</a></h4>
+              <p class="description">Unveil the latest in laptop technology with our new arrivals. Experience unmatched performance, sleek designs, and advanced features to elevate your computing journey.</p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <div class="icon"><i class="bi bi-bank"></i></div>
+              <h4 class="title"><a href="">EMI Service</a></h4>
+              <p class="description">Enable seamless shopping with our EMI service, allowing customers to spread the cost of purchases over easy monthly installments. Enjoy affordability, increased purchasing power, and a stress-free shopping experience tailored to your financial preferences.</p>
             </div>
           </div>
 
@@ -567,21 +567,20 @@
      End Testimonials Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="processor" class="portfolio">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+          <h2>Processor</h2>
+          <p>Intel and AMD</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app">Intel</li>
+              <li data-filter=".filter-card">AMD</li>
             </ul>
           </div>
         </div>
@@ -590,27 +589,13 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{% static "assets/img/portfolio/portfolio-1.jpg" %}" class="img-fluid" alt="">
+              <img src="{% static "assets/img/portfolio/i3.jpg" %}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
+                <h4>Core I3</h4>
+                <p>Intel Processor</p>
                 <div class="portfolio-links">
-                  <a href="{% static "assets/img/portfolio/portfolio-1.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static "assets/img/portfolio/portfolio-2.jpg" %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="{% static "assets/img/portfolio/portfolio-2.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="{% static "assets/img/portfolio/i3.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -618,41 +603,13 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{% static "assets/img/portfolio/portfolio-3.jpg" %}" class="img-fluid" alt="">
+              <img src="{% static "assets/img/portfolio/i5.jpg" %}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
+                <h4>Core I5</h4>
+                <p>Intel Processor</p>
                 <div class="portfolio-links">
-                  <a href="{% static "assets/img/portfolio/portfolio-3.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{% static "assets/img/portfolio/portfolio-4.jpg" %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="{% static "assets/img/portfolio/portfolio-4.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static "assets/img/portfolio/portfolio-5.jpg" %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="{% static "assets/img/portfolio/portfolio-5.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="{% static "assets/img/portfolio/i5.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -660,13 +617,27 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="{% static "assets/img/portfolio/portfolio-6.jpg" %}" class="img-fluid" alt="">
+              <img src="{% static "assets/img/portfolio/i7.jpg" %}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
+                <h4>Core I7</h4>
+                <p>Intel Processor</p>
                 <div class="portfolio-links">
-                  <a href="{% static "assets/img/portfolio/portfolio-6.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="{% static "assets/img/portfolio/i7.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{% static "assets/img/portfolio/i9.jpg" %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Core I9</h4>
+                <p>Intel Processor</p>
+                <div class="portfolio-links">
+                  <a href="{% static "assets/img/portfolio/i9.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -674,13 +645,13 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="{% static "assets/img/portfolio/portfolio-7.jpg" %}" class="img-fluid" alt="">
+              <img src="{% static "assets/img/portfolio/r3.jpg" %}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
+                <h4>Ryzen 3</h4>
+                <p>AMD Processor</p>
                 <div class="portfolio-links">
-                  <a href="{% static "assets/img/portfolio/portfolio-7.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="{% static "assets/img/portfolio/r3.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -688,31 +659,46 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="{% static "assets/img/portfolio/portfolio-8.jpg" %}" class="img-fluid" alt="">
+              <img src="{% static "assets/img/portfolio/r5.jpg" %}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
+                <h4>Ryzen 5</h4>
+                <p>AMD Processor</p>
                 <div class="portfolio-links">
-                  <a href="{% static "assets/img/portfolio/portfolio-8.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="{% static "assets/img/portfolio/r5.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="{% static "assets/img/portfolio/portfolio-9.jpg" %}" class="img-fluid" alt="">
+              <img src="{% static "assets/img/portfolio/r7.jpg" %}" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
+                <h4>Ryzen 7</h4>
+                <p>AMD Processor</p>
                 <div class="portfolio-links">
-                  <a href="{% static "assets/img/portfolio/portfolio-9.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="{% static "assets/img/portfolio/r7.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="{% static "assets/img/portfolio/r9.jpg" %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Ryzen 9</h4>
+                <p>AMD Processor</p>
+                <div class="portfolio-links">
+                  <a href="{% static "assets/img/portfolio/r9.jpg" %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
         </div>
 
@@ -720,7 +706,7 @@
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+    {% comment %} <section id="team" class="team section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -805,7 +791,7 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section><!-- End Team Section --> {% endcomment %}
 
     <!-- ======= Pricing Section =======
     <section id="pricing" class="pricing">
@@ -957,8 +943,8 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-about">
-              <h3>Vesperr</h3>
-              <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+              <h3>ShopNow</h3>
+              <p>We shopping so many branded laptops like HP, Dell, Lenovo, Acer, Asus, Samsung</p>
               <div class="social-links">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -972,7 +958,7 @@
             <div class="info">
               <div>
                 <i class="ri-map-pin-line"></i>
-                <p>A108 Adam Street<br>New York, NY 535022</p>
+                <p>Tamil Nadu<br>India, TN 620017</p>
               </div>
 
               <div>
@@ -982,7 +968,7 @@
 
               <div>
                 <i class="ri-phone-line"></i>
-                <p>+1 5589 55488 55s</p>
+                <p>+91 8610066775</p>
               </div>
 
             </div>
@@ -1024,14 +1010,14 @@
       <div class="row d-flex align-items-center">
         <div class="col-lg-6 text-lg-left text-center">
           <div class="copyright">
-            &copy; Copyright <strong>Vesperr</strong>. All Rights Reserved
+            &copy; Copyright <strong>ShopNow</strong>. All Rights Reserved
           </div>
           <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/">Mohamed Riyas</a>
           </div>
         </div>
         <div class="col-lg-6">
